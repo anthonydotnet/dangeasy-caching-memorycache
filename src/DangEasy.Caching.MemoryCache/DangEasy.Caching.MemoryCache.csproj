@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <PackOnBuild>true</PackOnBuild>
+    <Authors>Anthony Dang</Authors>
+    <Copyright>Anthony Dang</Copyright>
+    <PackageLicenseUrl>https://github.com/anthonydotnet/dangeasy-caching-memorycache/blob/master/LICENSE.md</PackageLicenseUrl>
+    <Owners>Anthony Dang</Owners>
+    <PackageProjectUrl>https://github.com/anthonydotnet/dangeasy-caching-memorycache</PackageProjectUrl>
+    <Summary>A wrapper System.Runtime.Caching.MemoryCache with some helpful methods for easy caching.</Summary>
+    <PackageTags>Cache, Caching, MemoryCache</PackageTags>
+    <Title>DangEasy.Caching.MemoryCache</Title>
+    <Description>A wrapper System.Runtime.Caching.MemoryCache with some helpful methods for easy caching.</Description>
+    <PackageId>DangEasy.Caching.MemoryCache</PackageId>
+    <PackageVersion>1.0.0</PackageVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Runtime.Caching" Version="4.5.0" />
+    <PackageReference Include="DangEasy.Interfaces.Caching" Version="1.0.0" />
+    <PackageReference Include="NuGet.Build.Packaging" Version="0.2.0" />
+  </ItemGroup>
+</Project>
