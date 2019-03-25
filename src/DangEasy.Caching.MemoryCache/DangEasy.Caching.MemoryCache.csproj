@@ -1,8 +1,9 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
-    <PackOnBuild>true</PackOnBuild>
+    <TargetFrameworks>netstandard2.0;net46;</TargetFrameworks>
+    <!--<PackOnBuild>true</PackOnBuild>-->
+    <PackageVersion>2.0.0</PackageVersion>
     <Authors>Anthony Dang</Authors>
     <Copyright>Anthony Dang</Copyright>
     <PackageLicenseUrl>https://github.com/anthonydotnet/dangeasy-caching-memorycache/blob/master/LICENSE.md</PackageLicenseUrl>
@@ -13,12 +14,23 @@
     <Title>DangEasy.Caching.MemoryCache</Title>
     <Description>A wrapper System.Runtime.Caching.MemoryCache with some helpful methods for easy caching.</Description>
     <PackageId>DangEasy.Caching.MemoryCache</PackageId>
-    <PackageVersion>1.0.0</PackageVersion>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="System.Runtime.Caching" Version="4.5.0" />
-    <PackageReference Include="DangEasy.Interfaces.Caching" Version="1.0.0" />
-    <PackageReference Include="NuGet.Build.Packaging" Version="0.2.0" />
+    <PackageReference Include="DangEasy.Interfaces.Caching" Version="2.0.0" />
   </ItemGroup>
+
+
+  <Target Name="_GetBuildOutputFilesWithTfm">
+  </Target>
+  <Target Name="_GetTfmSpecificContentForPackage">
+  </Target>
+  <Target Name="_GetDebugSymbolsWithTfm">
+  </Target>
+  <Target Name="_GetFrameworkAssemblyReferences">
+  </Target>
+  <Target Name="_GetFrameworksWithSuppressedDependencies">
+  </Target>
+  
 </Project>

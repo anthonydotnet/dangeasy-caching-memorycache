@@ -17,7 +17,7 @@ namespace DangEasy.Caching.MemoryCache.Test
         {
             var cacheKey = CacheKey.Build<When_Getting, string>("Value_Is_Returned");
 
-            _cache.Add(cacheKey, "hello", 10);
+            _cache.Add(cacheKey, "hello", new TimeSpan(0, 0, 1));
 
             var result = _cache.Get<string>(cacheKey);
 

@@ -1,3 +1,4 @@
+using System;
 using System.Threading;
 using Xunit;
 
@@ -17,7 +18,7 @@ namespace DangEasy.Caching.MemoryCache.Test
         {
             var cacheKey = CacheKey.Build<When_Adding, string>("Value_Times_Out");
 
-            _cache.Add(cacheKey, "hello", 1);
+            _cache.Add(cacheKey, "hello", new TimeSpan(0, 0, 1));
             Thread.Sleep(1100); // this is a bit hacky but i can't think of a more elegant way to test
 
             var result = _cache.Get<string>(cacheKey);

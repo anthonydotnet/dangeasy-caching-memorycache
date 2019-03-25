@@ -8,14 +8,13 @@ namespace DangEasy.Caching.MemoryCache
     {
         public static Cache Instance { get; } = new Cache();
 
-
-        public bool Add(string key, object value, int? cacheSeconds = null)
+        public bool Add(string key, object value, TimeSpan? cacheDuration = null)
         {
             var memoryCache = System.Runtime.Caching.MemoryCache.Default;
 
-            var cacheDuration = cacheSeconds != null ? DateTime.Now.AddSeconds(cacheSeconds.Value) : DateTime.MaxValue;
+            var duration = cacheDuration != null ? DateTime.UtcNow.Add(cacheDuration.Value) : DateTime.MaxValue;
 
-            return memoryCache.Add(key, value, cacheDuration);
+            return memoryCache.Add(key, value, duration);
         }
 
 
@@ -26,7 +25,7 @@ namespace DangEasy.Caching.MemoryCache
         }
 
 
-        public T Get<T>(string cacheKey, Func<T> hydrationFunction, int? cacheSeconds = null)
+        public T Get<T>(string cacheKey, Func<T> hydrationFunction, TimeSpan? timeSpan = null)
             where T : class
         {
             if (Get<T>(cacheKey) is T cachedItem)
@@ -41,7 +40,7 @@ namespace DangEasy.Caching.MemoryCache
                 return null;
             }
 
-            Add(cacheKey, itemToBeCached, cacheSeconds);
+            Add(cacheKey, itemToBeCached, timeSpan);
 
             return itemToBeCached;
         }
