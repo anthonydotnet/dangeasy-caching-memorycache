@@ -1,24 +1,26 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;net46;</TargetFrameworks>
+    <TargetFrameworks>net452;net46;net472;netstandard2.0;</TargetFrameworks>
     <!--<PackOnBuild>true</PackOnBuild>-->
-    <PackageVersion>2.0.0</PackageVersion>
+    <PackageVersion>2.1.0</PackageVersion>
     <Authors>Anthony Dang</Authors>
     <Copyright>Anthony Dang</Copyright>
     <PackageLicenseUrl>https://github.com/anthonydotnet/dangeasy-caching-memorycache/blob/master/LICENSE.md</PackageLicenseUrl>
     <Owners>Anthony Dang</Owners>
-    <PackageProjectUrl>https://github.com/anthonydotnet/dangeasy-caching-memorycache</PackageProjectUrl>
-    <Summary>A wrapper System.Runtime.Caching.MemoryCache with some helpful methods for easy caching.</Summary>
+    <PackageProjectUrl>https://github.com/anthonydotnet/dangeasy-caching-memorycache</PackageProjectUrl>    
     <PackageTags>Cache, Caching, MemoryCache</PackageTags>
     <Title>DangEasy.Caching.MemoryCache</Title>
-    <Description>A wrapper System.Runtime.Caching.MemoryCache with some helpful methods for easy caching.</Description>
+    <Description>A wrapper for System.Runtime.Caching.MemoryCache with some helpful methods for easy caching.</Description>
     <PackageId>DangEasy.Caching.MemoryCache</PackageId>
+    <Version>2.1.0</Version>
+    <RepositoryUrl>https://github.com/anthonydotnet/dangeasy-caching-memorycache</RepositoryUrl>
+    <PackageReleaseNotes>Now supporting dotnet standard 2.0, and framework 4.5.2+.</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="dangeasy.interfaces.caching" Version="2.1.0" />
     <PackageReference Include="System.Runtime.Caching" Version="4.5.0" />
-    <PackageReference Include="DangEasy.Interfaces.Caching" Version="2.0.0" />
   </ItemGroup>
 
 
